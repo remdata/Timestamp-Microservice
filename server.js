@@ -23,7 +23,7 @@ var result = {
 	utc: null
 };
 
-let date; 
+var date; 
 
 // handle GET [project url]/api/timestamp/  --> no date specified
 app.get("/api/timestamp/", function (req, res) {
@@ -35,7 +35,7 @@ app.get("/api/timestamp/", function (req, res) {
 
 // handle GET [project url]/api/timestamp/*   --> potential date specified
 app.get("/api/timestamp/:dateString", function (req, res) {
-  let inputDateString = req.params.dateString
+  var inputDateString = req.params.dateString;
   
   console.log("req.params.dateString = ", req.params.dateString);
   console.log("req.params = ", req.params);
@@ -65,6 +65,6 @@ app.get("/api/timestamp/:dateString", function (req, res) {
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
-//var listener = app.listen(8080, function () {    // 1/1/2019
+//var listener = app.listen(portNumber, function () { // 1/9/2019 - specify "portNumber" 
   console.log('Your app is listening on port ' + listener.address().port);
 });  
